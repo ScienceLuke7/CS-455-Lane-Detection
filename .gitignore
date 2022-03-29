@@ -3,6 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#datasets
+*.zip
+_datasets/train_set
+_datasets/test_set
+
 #VS Code stuff
 .vscode/
 
