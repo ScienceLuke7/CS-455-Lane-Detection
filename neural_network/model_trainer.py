@@ -136,7 +136,7 @@ model.add(Conv2DTranspose(3, kernel_size=(2, 2), strides=2, padding='same')) """
 print(model.summary())
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-model.fit(all_images, all_labels, epochs=1, batch_size=32)
+model.fit(all_images, all_labels, epochs=5000, batch_size=32)
 
 """ gen_img = model(test_image, training=False).numpy()[0]
 
