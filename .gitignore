@@ -8,6 +8,9 @@
 _datasets/train_set
 _datasets/test_set
 
+# data labels
+test_labels
+
 #VS Code stuff
 .vscode/
 

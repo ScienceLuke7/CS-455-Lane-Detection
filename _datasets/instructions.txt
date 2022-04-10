@@ -1,1 +1,2 @@
-Put the 10gb training and test zip datasets in this folder and extract
+Put the 10gb training and test zip datasets in this folder and extract from repository below
+https://github.com/TuSimple/tusimple-benchmark/issues/3
