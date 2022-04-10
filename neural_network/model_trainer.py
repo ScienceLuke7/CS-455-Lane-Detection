@@ -24,7 +24,7 @@ for _ in json_gt:
     train_image = cv2.imread(raw_file)
     train_image = train_image.reshape(-1,720,1280,3)
     all_images.append(train_image)
-    train_label = cv2.imread('test_labels/test_label_{0}.jpg'.format(i))
+    train_label = cv2.imread('train_labels/test_label_{0}.jpg'.format(i))
     train_label = train_label.reshape(-1,720,1280,3)
     all_labels.append(train_label)
     i += 1
@@ -136,7 +136,7 @@ model.add(Conv2DTranspose(3, kernel_size=(2, 2), strides=2, padding='same')) """
 print(model.summary())
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-model.fit(train_image, train_label, epochs=5000, batch_size=32)
+model.fit(all_images, all_labels, epochs=1, batch_size=32)
 
 """ gen_img = model(test_image, training=False).numpy()[0]
 

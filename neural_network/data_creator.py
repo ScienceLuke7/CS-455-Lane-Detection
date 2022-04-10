@@ -30,7 +30,7 @@ for _ in json_gt:
     label = np.zeros((720,1280,3), dtype = np.uint8)
     for k in range(len(colors)):
         label[np.where((mask_img == colors[k]).all(axis=2))] = 255
-    cv2.imwrite('test_labels/test_label_{0}.jpg'.format(i), img_with_lanes)
+    cv2.imwrite('train_labels/test_label_{0}.jpg'.format(i), img_with_lanes)
     i += 1
 
 """ cv2.imshow('image', mask_img)
