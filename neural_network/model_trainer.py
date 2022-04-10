@@ -13,7 +13,16 @@ maxpool1 = MaxPool2D(pool_size=(2,2), strides=2)(conv1)
 norm1 = BatchNormalization()(maxpool1) """
 
 json_gt = [json.loads(line) for line in open('./_datasets/train_set/label_data_0313.json')]
-i = 0
+gt = json_gt[0]
+raw_file = './_datasets/train_set/' + gt['raw_file']
+train_image = cv2.imread(raw_file)
+train_image = train_image.reshape(-1,720,1280,3)
+train_label = cv2.imread('train_labels/test_label_0.jpg')
+train_label = train_label.reshape(-1,720,1280,3)
+
+
+# TODO: model doesnt work with more than 1 image at a time; need to fix
+""" i = 0
 
 all_images = []
 all_labels = []
@@ -22,12 +31,10 @@ for _ in json_gt:
     raw_file = './_datasets/train_set/' + gt['raw_file']
 
     train_image = cv2.imread(raw_file)
-    train_image = train_image.reshape(-1,720,1280,3)
     all_images.append(train_image)
     train_label = cv2.imread('train_labels/test_label_{0}.jpg'.format(i))
-    train_label = train_label.reshape(-1,720,1280,3)
     all_labels.append(train_label)
-    i += 1
+    i += 1 """
 
 
 
@@ -136,8 +143,11 @@ model.add(Conv2DTranspose(3, kernel_size=(2, 2), strides=2, padding='same')) """
 print(model.summary())
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-model.fit(all_images, all_labels, epochs=5000, batch_size=32)
+model.fit(train_image, train_label, epochs=1, batch_size=1)
 
+model.save("saved_cnn_model")
+
+# shows image generated from model outputs
 """ gen_img = model(test_image, training=False).numpy()[0]
 
 cv2.imshow('image', gen_img)
@@ -147,7 +157,6 @@ while cv2.getWindowProperty('image', cv2.WND_PROP_VISIBLE) >= 1:
         break
 cv2.destroyAllWindows() """
 
-model.save("saved_cnn_model")
 
 """ print('\n\n')
 print(model.metrics_names)
