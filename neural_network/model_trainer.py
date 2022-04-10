@@ -143,7 +143,7 @@ model.add(Conv2DTranspose(3, kernel_size=(2, 2), strides=2, padding='same')) """
 print(model.summary())
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-model.fit(train_image, train_label, epochs=1, batch_size=1)
+model.fit(train_image, train_label, epochs=5000, batch_size=1)
 
 model.save("saved_cnn_model")
 
