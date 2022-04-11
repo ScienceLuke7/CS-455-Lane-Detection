@@ -1,29 +1,21 @@
 import json
 import cv2
+import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import Model, Sequential
 from tensorflow.keras.layers import Conv2D, MaxPool2D, BatchNormalization, Dropout, Conv2DTranspose, Input
 
-
-# define shape
-""" input = Input(shape=(720, 1280, 3))
-conv1 = Conv2D(13, kernel_size=(3,3), strides=2, use_bias=True, padding='same', input_shape=(1, 3, 3, 4))(input)
-maxpool1 = MaxPool2D(pool_size=(2,2), strides=2)(conv1)
-norm1 = BatchNormalization()(maxpool1) """
-
 json_gt = [json.loads(line) for line in open('./_datasets/train_set/label_data_0313.json')]
-gt = json_gt[0]
+""" gt = json_gt[0]
 raw_file = './_datasets/train_set/' + gt['raw_file']
 train_image = cv2.imread(raw_file)
 train_image = train_image.reshape(-1,720,1280,3)
 train_label = cv2.imread('train_labels/test_label_0.jpg')
-train_label = train_label.reshape(-1,720,1280,3)
+train_label = train_label.reshape(-1,720,1280,3) """
 
 
-# TODO: model doesnt work with more than 1 image at a time; need to fix
-""" i = 0
-
+i = 0
 all_images = []
 all_labels = []
 for _ in json_gt:
@@ -34,7 +26,11 @@ for _ in json_gt:
     all_images.append(train_image)
     train_label = cv2.imread('train_labels/test_label_{0}.jpg'.format(i))
     all_labels.append(train_label)
-    i += 1 """
+    i += 1
+all_images: np.ndarray = np.array(all_images)
+all_images = all_images.reshape(-1,720,1280,3)
+all_labels: np.ndarray = np.array(all_labels)
+all_labels = all_labels.reshape(-1,720,1280,3)
 
 
 
@@ -143,7 +139,7 @@ model.add(Conv2DTranspose(3, kernel_size=(2, 2), strides=2, padding='same')) """
 print(model.summary())
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-model.fit(train_image, train_label, epochs=5000, batch_size=1)
+model.fit(all_images, all_labels, epochs=5000)
 
 model.save("saved_cnn_model")
 
