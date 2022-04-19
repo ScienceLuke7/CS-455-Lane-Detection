@@ -1,10 +1,15 @@
 import json
+import os
 import numpy as np
 import cv2
-import matplotlib.pyplot as plt
 # read each line of json file
 json_gt = [json.loads(line) for line in open('./_datasets/train_set/label_data_0313.json')]
 i = 0
+
+label_directory = './train_labels'
+if not os.path.exists(label_directory) :
+    os.mkdir(label_directory)
+
 for _ in json_gt:
     gt = json_gt[i]
     gt_lanes = gt['lanes']
