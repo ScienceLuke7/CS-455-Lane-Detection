@@ -1,23 +1,25 @@
 import json
-from flask import Flask, jsonify
+import pickle
+from flask import Flask, jsonify, request, send_file
+# import neural_network.model_evaluator
 
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    return jsonify('hello wooorld')
+    return jsonify('lane-detection')
 
-@app.route("/getSample", methods=["GET"])
-def getSample():
-    sampleObject = {
-        'stuff': 'asdas'
-    }
-    return json.dumps(sampleObject.__dict__)
+@app.route("/postRawImage", methods=["POST"])
+def getProcessedImage():
+    image = pickle.loads(request.data)
+    print(image)
+    return
 
-@app.route("/postSample", methods=["POST"])
-def getWatchList():
-    # doesnt do anything
-    return #json.dumps()
+@app.route("/postRawVideo", methods=["POST"])
+def getProcessedVideo():
+    video = request.data
+    print(video)
+    return
 
 
 
