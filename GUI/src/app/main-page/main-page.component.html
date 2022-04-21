@@ -6,14 +6,13 @@
     </div>
     <div class="background">
         <div>
-            <div *ngIf="!hasSelectedVideo" class="img-card" (click)="chooseVideo()">
-                <img src="../assets/upload.JPG" width="256" height="256">
+            <div class="img-card">
+                <angular-file-uploader
+                [config]="afuConfig">
+                </angular-file-uploader>
             </div>
             <div *ngIf="isUploading" class="spin-card">
                 <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            </div>
-            <div *ngIf="!isUploading" class="up-button">
-                <button mat-raised-button color="accent"  (click)="uploadVideo()">Upload Video</button>
             </div>
         </div>
     </div>

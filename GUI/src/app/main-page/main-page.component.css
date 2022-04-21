@@ -41,9 +41,7 @@
     height: fit-content;
     top: 10vh;
     left: 41.5vw;
-    width: fit-content;
-    border: 5px solid;
-    border-color: #9381ff;
+    width: 30vw;
 }
 
 .spin-card {

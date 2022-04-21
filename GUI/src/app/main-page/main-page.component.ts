@@ -10,6 +10,12 @@ export class MainPageComponent implements OnInit {
   isRecieved: boolean = false;
   hasSelectedVideo = false; 
 
+  afuConfig = {
+    uploadAPI: {
+      url:"https://example-file-upload-api"
+    }
+};
+
   constructor() { }
 
   ngOnInit(): void {
