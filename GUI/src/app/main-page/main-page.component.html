@@ -6,17 +6,19 @@
     </div>
     <div class="background">
         <div>
-            <div class="img-card">
-                <!-- add ngif for uploaded/not uploaded  -->
+            <div *ngIf="!hasSelectedVideo" class="img-card" (click)="chooseVideo()">
                 <img src="../assets/upload.JPG" width="256" height="256">
             </div>
-            <div class ="up-button">
-                <button mat-raised-button color="accent">Upload Video</button>
+            <div *ngIf="isUploading" class="spin-card">
+                <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div *ngIf="!isUploading" class="up-button">
+                <button mat-raised-button color="accent"  (click)="uploadVideo()">Upload Video</button>
             </div>
         </div>
     </div>
     <div>
-        <mat-toolbar class="about-project" (click)="uploadVideo()">
+        <mat-toolbar class="about-project">
             <p class="name-text">CS 455 Class Project </p>
             <p class="name-text"> ----- </p>
             <p class="name-text">Christopher Etinas | Jakob Haehre | Keely Mashburn </p>

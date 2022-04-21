@@ -6,15 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
+  isUploading: boolean = false; 
+  isRecieved: boolean = false;
+  hasSelectedVideo = false; 
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  chooseVideo()
+  {
+
+  }
+
   uploadVideo()
   {
-    
+    this.isUploading = true;
   }
 
 }
