@@ -1,0 +1,54 @@
+.toolbar {
+    font-size: 1.5rem;
+    background-color: #9381ff;
+    color: #f8f7ff;
+    height: 10vh;
+    width: 100vw;
+}
+
+.background {
+    background-color: #f8f7ff;
+    height: 80vh;
+    width: 100vw;
+}
+
+.project-name {
+    left: 88vw;
+    font-size: 1em;
+    position: absolute;
+}
+
+.about-project {
+    height: 10vh;
+    position: absolute;
+    width: 100vw;
+    font-size: 0.95em;
+    background-color: #b8b8ff;
+    color: #f8f7ff;
+}
+
+.name-text {
+    position: relative;
+    left: 33vw;
+    margin: 0.5em;
+    text-align: center;
+}
+
+.img-card {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: fit-content;
+    top: 10vh;
+    left: 41.5vw;
+    width: fit-content;
+    border: 5px solid;
+    border-color: #9381ff;
+}
+
+.up-button {
+    display: flex;
+    position: relative;
+    top: 15vh;
+    justify-content: center;
+}

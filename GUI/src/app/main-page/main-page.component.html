@@ -1,0 +1,25 @@
+<div>
+    <div>
+        <mat-toolbar class="toolbar">
+            <span>Lane Detection</span>
+          </mat-toolbar>
+    </div>
+    <div class="background">
+        <div>
+            <div class="img-card">
+                <!-- add ngif for uploaded/not uploaded  -->
+                <img src="../assets/upload.JPG" width="256" height="256">
+            </div>
+            <div class ="up-button">
+                <button mat-raised-button color="accent">Upload Video</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <mat-toolbar class="about-project" (click)="uploadVideo()">
+            <p class="name-text">CS 455 Class Project </p>
+            <p class="name-text"> ----- </p>
+            <p class="name-text">Christopher Etinas | Jakob Haehre | Keely Mashburn </p>
+        </mat-toolbar>
+    </div>
+</div>
