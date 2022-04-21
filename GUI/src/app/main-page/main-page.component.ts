@@ -11,10 +11,27 @@ export class MainPageComponent implements OnInit {
   hasSelectedVideo = false; 
 
   afuConfig = {
-    uploadAPI: {
-      url:"https://example-file-upload-api"
+    multiple: false,
+    formatsAllowed: ".jpg,.mp4",
+    maxSize: 20,
+    uploadAPI:  {
+      url:"https://example-file-upload-api",
+    },
+    hideProgressBar: false,
+    hideResetBtn: true,
+    hideSelectBtn: false,
+    fileNameIndex: true,
+    autoUpload: false,
+    replaceTexts: {
+      selectFileBtn: 'Select Files',
+      resetBtn: 'Reset',
+      uploadBtn: 'Upload',
+      attachPinBtn: 'Attach Files...',
+      afterUploadMsg_success: 'Successfully Uploaded !',
+      afterUploadMsg_error: 'Upload Failed !',
+      sizeLimit: 'Size Limit'
     }
-};
+  };
 
   constructor() { }
 

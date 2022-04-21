@@ -5,15 +5,10 @@
           </mat-toolbar>
     </div>
     <div class="background">
-        <div>
-            <div class="img-card">
-                <angular-file-uploader
+        <div class="img-card">
+            <angular-file-uploader
                 [config]="afuConfig">
-                </angular-file-uploader>
-            </div>
-            <div *ngIf="isUploading" class="spin-card">
-                <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            </div>
+            </angular-file-uploader>
         </div>
     </div>
     <div>
