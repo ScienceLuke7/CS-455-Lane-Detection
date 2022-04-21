@@ -24,7 +24,7 @@ def getProcessedVideo():
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     out = cv2.VideoWriter('./output_video.mp4', fourcc, 20, (1280,720), isColor=True)
     
-    for filename in glob.glob('./_datasets/train_set/clips/0313-1/120/*.jpg'):
+    for filename in glob.glob('../_datasets/train_set/clips/0313-1/120/*.jpg'):
         img = cv2.imread(filename)
         out.write(img)
 
