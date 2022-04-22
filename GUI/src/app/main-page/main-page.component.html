@@ -5,9 +5,17 @@
           </mat-toolbar>
     </div>
     <div class="background">
-        <div class="img-card">
-            <angular-file-uploader
-                [config]="afuConfig">
+        <div class="check">
+            <mat-checkbox [checked]="isVideo">Is this a video?</mat-checkbox>
+        </div>
+        <div *ngIf="!isUploading && isVideo" class="img-card">
+            <angular-file-uploader 
+                [config] = "afuConfig" >
+            </angular-file-uploader>
+        </div>
+        <div *ngIf="!isUploading && !isVideo" class="img-card">
+            <angular-file-uploader 
+                [config] = "afuConfig2">
             </angular-file-uploader>
         </div>
     </div>

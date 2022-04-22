@@ -12,6 +12,12 @@
     width: 100vw;
 }
 
+.check {
+    text-align: center;
+    top: 18vh;
+    position: relative;
+}
+
 .project-name {
     left: 88vw;
     font-size: 1em;
