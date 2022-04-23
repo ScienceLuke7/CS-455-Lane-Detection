@@ -15,7 +15,7 @@ def home():
 def getProcessedImage():
     image = request.data
     # print(image)
-    return send_file('../_datasets/train_set/clips/0313-1/120/10.jpg', mimetype='image/jpeg')
+    return send_file('../train_labels/test_label_14.jpg', mimetype='image/jpeg')
 
 @app.route("/postRawVideo", methods=["POST"])
 def getProcessedVideo():
