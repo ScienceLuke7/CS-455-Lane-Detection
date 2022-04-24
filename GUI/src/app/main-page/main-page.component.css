@@ -6,6 +6,15 @@
     width: 100vw;
 }
 
+.upload {
+    text-align: center;
+    background: #f8f7ff;
+    top: 9vw;
+    height: 300px;
+    position: relative;
+    z-index: 10;
+}
+
 .background {
     background-color: #f8f7ff;
     height: 80vh;
