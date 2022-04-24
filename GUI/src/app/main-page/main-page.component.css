@@ -6,10 +6,25 @@
     width: 100vw;
 }
 
+.upload {
+    text-align: center;
+    background: #f8f7ff;
+    top: 9vw;
+    height: 300px;
+    position: relative;
+    z-index: 10;
+}
+
 .background {
     background-color: #f8f7ff;
     height: 80vh;
     width: 100vw;
+}
+
+.check {
+    text-align: center;
+    top: 18vh;
+    position: relative;
 }
 
 .project-name {
@@ -35,20 +50,28 @@
 }
 
 .img-card {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  height: fit-content;
+  top: 20vh;
+  text-align: center;
+}
+
+.spin-card {
     display: flex;
     position: relative;
     justify-content: center;
     height: fit-content;
-    top: 10vh;
-    left: 41.5vw;
-    width: fit-content;
-    border: 5px solid;
-    border-color: #9381ff;
+    top: 20vh;
+    left: 42.5vw;
+    width: 15vw;
+    margin-bottom: 10vh;
 }
 
 .up-button {
     display: flex;
     position: relative;
-    top: 15vh;
+    margin-top: 15vh;
     justify-content: center;
 }

@@ -4,19 +4,29 @@
             <span>Lane Detection</span>
           </mat-toolbar>
     </div>
-    <div class="background">
-        <div>
-            <div class="img-card">
-                <!-- add ngif for uploaded/not uploaded  -->
-                <img src="../assets/upload.JPG" width="256" height="256">
-            </div>
-            <div class ="up-button">
-                <button mat-raised-button color="accent">Upload Video</button>
-            </div>
+    <div class="background" *ngIf="!showResults">
+        <div class="check">
+            <mat-checkbox [checked]="isVideo">Is this a video?</mat-checkbox>
+        </div>
+        <div class="img-card">
+            <angular-file-uploader 
+                [config] = "afuConfig">
+            </angular-file-uploader>
+        </div>
+        <div class="upload">
+            <button mat-stroked-button color="accent" (click)="showResult()">Upload</button>
+        </div>
+    </div>
+    <div class="background" *ngIf="showResults">
+        <div class="check">
+            <h2>Results</h2>
+        </div>
+        <div class="img-card">
+            <img src="../assets/test_label_14.jpg" width="256" height="256">
         </div>
     </div>
     <div>
-        <mat-toolbar class="about-project" (click)="uploadVideo()">
+        <mat-toolbar class="about-project">
             <p class="name-text">CS 455 Class Project </p>
             <p class="name-text"> ----- </p>
             <p class="name-text">Christopher Etinas | Jakob Haehre | Keely Mashburn </p>
