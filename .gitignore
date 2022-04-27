@@ -8,6 +8,11 @@
 _datasets/train_set
 _datasets/test_set
 
+#models
+saved_cnn_model
+simple_model_500
+train_labels
+complex_model_100
 
 #VS Code stuff
 .vscode/
